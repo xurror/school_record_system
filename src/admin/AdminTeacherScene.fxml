@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import org.kairos.components.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="964.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminTeacherSceneController">
+    <children>
+      <BorderPane layoutX="464.0" layoutY="248.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="29.0" prefWidth="1180.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar prefHeight="25.0" prefWidth="1180.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#setCourseCloseButtonClick" text="Close" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#setCourseAboutButtonClick" text="About" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <SplitPane dividerPositions="0.35550935550935553" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="508.0" fitWidth="354.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../image/backgroung.jpg" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#5773e4" fontSmoothingType="LCD" layoutX="16.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher Details:" AnchorPane.bottomAnchor="504.482421875" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="214.33203125" AnchorPane.topAnchor="59.576171875">
+                           <font>
+                              <Font name="Bookman Old Style" size="25.0" />
+                           </font>
+                        </Text>
+                        <Separator layoutX="13.0" layoutY="99.0" prefHeight="4.0" prefWidth="322.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="99.0" />
+                        <GridPane layoutX="21.0" layoutY="157.0" prefHeight="140.0" prefWidth="296.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="157.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="131.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="186.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                                 <font>
+                                    <Font name="Bookman Old Style" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="10.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Bookman Old Style" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="10.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricule" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Bookman Old Style" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Text fontSmoothingType="LCD" layoutX="10.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Bookman Old Style" size="15.0" />
+                                 </font>
+                              </Text>
+                              <JFXTextField fx:id="jftfTeacherFName" disable="true" GridPane.columnIndex="1" />
+                              <JFXTextField fx:id="jftfTeacherEmail" disable="true" layoutX="133.0" layoutY="14.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="jftfTeacherMatricule" disable="true" layoutX="133.0" layoutY="14.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="jftfTeacherLName" disable="true" layoutX="133.0" layoutY="14.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Separator layoutX="9.0" layoutY="412.0" prefHeight="2.0" prefWidth="330.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
+                        <Text fill="#831fa4" fontSmoothingType="LCD" layoutX="16.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher Information">
+                           <font>
+                              <Font name="Bookman Old Style" size="20.0" />
+                           </font>
+                        </Text>
+                        <MaterialButton layoutX="19.0" layoutY="14.0" onAction="#setTeacherAddClick" prefHeight="26.0" prefWidth="94.0" style="-fx-font-family: Bookman Old Style; -fx-background-color: #0B9CE3;" text="ADD TEACHER" />
+                        <MaterialButton fx:id="adminTeacherCancelClick" disable="true" layoutX="127.0" layoutY="434.0" onAction="#setTeacherCancelClick" prefHeight="21.0" prefWidth="88.0" style="-fx-font-family: Bookman Old Style; -fx-background-color: #FF3F3C;" text="CANCEL" />
+                        <MaterialButton layoutX="240.0" layoutY="14.0" onAction="#setTeacherDeleteClick" prefHeight="16.0" prefWidth="88.0" style="-fx-font-family: Bookman Old Style; -fx-background-color: #FF3F3C;" text="DELETE" />
+                        <MaterialButton layoutX="130.0" layoutY="14.0" onAction="#setTeacherEditClick" prefHeight="25.0" prefWidth="88.0" style="-fx-font-family: Bookman Old Style; -fx-background-color: #09B28C;" text="EDIT" />
+                        <MaterialButton fx:id="adminTeacherSaveClick" disable="true" layoutX="240.0" layoutY="434.0" onAction="#setTeacherSaveClick" prefHeight="26.0" prefWidth="88.0" style="-fx-font-family: Bookman Old Style; -fx-background-color: #09B28C;" text="SAVE" />
+                        <Text fontSmoothingType="LCD" layoutX="22.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department">
+                           <font>
+                              <Font name="Bookman Old Style" size="15.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="jftfTeacherDepartment" disable="true" layoutX="130.0" layoutY="472.0" />
+                        <Text fontSmoothingType="LCD" layoutX="21.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Running Course">
+                           <font>
+                              <Font name="Bookman Old Style" size="15.0" />
+                           </font>
+                        </Text>
+                        <JFXComboBox fx:id="chooseRunningCourse" disable="true" layoutX="169.0" layoutY="374.0" prefHeight="25.0" prefWidth="89.0" />
+                        <JFXComboBox fx:id="chooseDepartment" disable="true" layoutX="258.0" layoutY="333.0" prefHeight="25.0" prefWidth="66.0" />
+                        <Text fontSmoothingType="LCD" layoutX="22.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faculty">
+                           <font>
+                              <Font name="Bookman Old Style" size="15.0" />
+                           </font>
+                        </Text>
+                        <JFXComboBox fx:id="chooseFaculty" disable="true" layoutX="167.0" layoutY="307.0" prefHeight="15.0" prefWidth="146.0" />
+                        <MaterialButton fx:id="TeacherLoadClick" disable="true" layoutX="161.0" layoutY="332.0" minWidth="67.0" onAction="#setTeacherLoadClick" prefHeight="26.0" prefWidth="67.0" style="-fx-font-family: Bookman Old Style; -fx-background-color: #09B28C;" text="LOAD" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="507.0" fitWidth="617.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../image/backgroung.jpg" />
+                           </image>
+                        </ImageView>
+                        <Pane fx:id="pane1" prefHeight="110.0" prefWidth="605.0" />
+                        <Pane fx:id="pane2" prefHeight="114.0" prefWidth="616.0" />
+                        <Pane fx:id="pane3" prefHeight="114.0" prefWidth="618.0" />
+                        <Pane fx:id="pane4" prefHeight="113.0" prefWidth="618.0" />
+                        <TableView fx:id="adminTeacherTableView" layoutX="2.0" layoutY="89.0" prefHeight="413.0" prefWidth="598.0" stylesheets="@../style/adminStyle.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="89.0">
+                           <columns>
+                              <TableColumn fx:id="adminTeacherColumnNo" prefWidth="32.0" text="No." />
+                              <TableColumn fx:id="adminTeacherColumnName" prefWidth="144.0" text="Name" />
+                              <TableColumn fx:id="adminTeacherColumnMatricule" prefWidth="62.0" text="Matricule" />
+                              <TableColumn fx:id="adminTeacherColumnEmail" prefWidth="86.0" text="Email" />
+                              <TableColumn fx:id="adminTeacherColumnFaculty" prefWidth="152.0" text="Faculty" />
+                              <TableColumn fx:id="adminTeacherColumnDepartment" minWidth="0.0" prefWidth="74.0" text="Department" />
+                              <TableColumn fx:id="adminTeacherColumnRunningCourse" prefWidth="142.0" text="R. Course" />
+                           </columns>
+                        </TableView>
+                        <MaterialButton layoutX="24.0" layoutY="23.0" onAction="#setTeacherRefreshClick" prefHeight="26.0" prefWidth="88.0" style="-fx-font-family: Bookman Old Style; -fx-background-color: #09B28C;" stylesheets="@../style/adminStyle.css" text="REFRESH" />
+                        <MaterialButton layoutX="503.0" layoutY="24.0" onAction="#setTeacherSearchClick" prefHeight="26.0" prefWidth="88.0" style="-fx-font-family: Bookman Old Style; -fx-background-color: #09B28C;" text="SEARCH" />
+                        <JFXTextField fx:id="jftfTeacherSearch" layoutX="354.0" layoutY="22.0" promptText="matricule" />
+                     </children></AnchorPane>
+               </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

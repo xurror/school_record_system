@@ -1,0 +1,68 @@
+/* 
+    Document   : win 7 glass css styles for JavaFX 2+ controls.
+    Created on : May 22, 2012, 3:31:03 PM
+    Description:
+        Attempt to recreate Win 7 glass theme. If a -fx- variable isnt defined
+        in this CSS stylesheet, I am referecing it in the default style sheet
+        "caspian.css".
+        In this version: Menus have been styled. However, a fundamental problem
+        exists. Currently Im perplexed. I'd like your thoughts: Is it possible
+        in CSS to detect if a graphic Icon exists? I originally thought using
+        the '.menu-item .graphic-container {}' class as a part of clever css to 
+        override the .context-menu {} styles. I thought in this situation it is
+        known that a graphic icon exists. And I could work from that.
+        If you have thoughts, please advise.
+        The issue will be obvious if your menu doesnt contain any graphic icons.
+        The line will appear behind menu item text. However, progress is being 
+        made!
+*/
+/*******************************************************************************
+ *           
+    *I will provide this
+ * Tables                                      *
+ *                                                                             *
+ ******************************************************************************/
+.table-view, .tree-table-view {
+    /* Constants used throughout the tableview. */
+    -fx-table-header-border-color: transparent;
+    -fx-table-cell-border-color: -fx-box-border; /* Horizontal Lines*/
+    -fx-background-color: transparent;
+}
+
+/* The column header row is made up of a number of column-header, one for each
+   TableColumn, and a 'filler' area that extends from the right-most column
+   to the edge of the tableview, or up to the 'column control' button. */
+.table-view .filler, .tree-table-view .filler, .table-view .column-header,
+.tree-table-view .column-header {
+    -fx-size: 65;
+    -fx-border-style: null;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-color: transparent;
+}
+
+.table-view .show-hide-columns-button, .tree-table-view .show-hide-columns-button
+{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label, .table-view .filler .label,
+.table-view .column-drag-header .label, .tree-table-view .column-header .label,
+.tree-table-view .filler .label, .tree-table-view .column-drag-header .label
+{
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view .column-header-background, .tree-table-view .column-header-background
+{
+    -fx-background-color: transparent;
+}
+
+.table-row-cell, .tree-table-row-cell {
+    -fx-cell-size: 40px;
+}
+
+.table-cell {
+    -fx-border-color: transparent; /* Vertical Lines*/
+    -fx-border-width: 1;
+}

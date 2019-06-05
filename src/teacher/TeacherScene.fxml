@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.validation.*?>
+<?import org.kairos.components.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teacher.TeacherSceneController">
+    <children>
+      <ImageView fitHeight="537.0" fitWidth="777.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/backgroung.jpg" />
+         </image>
+      </ImageView>
+        <BorderPane layoutX="464.0" layoutY="248.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <AnchorPane prefHeight="29.0" prefWidth="1180.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <MenuBar prefHeight="25.0" prefWidth="1180.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <menus>
+                                <Menu mnemonicParsing="false" text="File">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#setCourseCloseButtonClick" text="Close" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Help">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#setCourseAboutButtonClick" text="About" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+                    </children>
+                </AnchorPane>
+            </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="teacherTableView" layoutX="430.0" layoutY="65.0" prefHeight="409.0" prefWidth="334.0" stylesheets="@../style/adminStyle.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="430.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="65.0">
+                    <columns>
+                      <TableColumn fx:id="teacherColumnMatricule" prefWidth="93.0" text="S. Matricule" />
+                        <TableColumn fx:id="teacherColumnCA" prefWidth="82.0" text="CA" />
+                        <TableColumn fx:id="teacherColumnExams" prefWidth="73.0" text="Exams" />
+                        <TableColumn fx:id="teacherColumnTotal" prefWidth="84.0" text="Total" />
+                    </columns>
+                  </TableView>
+                  <GridPane layoutX="51.0" layoutY="180.0" prefHeight="225.0" prefWidth="300.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="168.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="132.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance">
+                           <font>
+                              <Font name="Bookman Old Style" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Bookman Old Style" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class Test" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Bookman Old Style" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Final Exams" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Bookman Old Style" size="15.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="jftfTeacherAttendance" disable="true" GridPane.columnIndex="1" />
+                        <JFXTextField fx:id="jftfTeacherAssignment" disable="true" layoutX="160.0" layoutY="17.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="jftfTeacherClassTest" disable="true" layoutX="160.0" layoutY="103.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="jftfTeacherFinal" disable="true" labelFloat="true" layoutX="160.0" layoutY="189.0" promptText="           / 70" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+                  <Separator layoutX="21.0" layoutY="427.0" prefHeight="3.0" prefWidth="339.0" />
+                  <JFXComboBox fx:id="chooseRunningCourse" layoutX="540.0" layoutY="17.0" prefHeight="32.0" prefWidth="129.0" promptText="choose a course" />
+                  <Text fx:id="sMatricule" fill="#f57c00" fontSmoothingType="LCD" layoutX="147.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(sMATRICULE)">
+                     <font>
+                        <Font name="Bookman Old Style" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="sName" fill="#f57c00" fontSmoothingType="LCD" layoutX="21.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sName" wrappingWidth="113.3935546875">
+                     <font>
+                        <Font name="Bookman Old Style" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="matricule1" fill="#673ab7" fontSmoothingType="LCD" layoutX="12.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GPA Calculation:">
+                     <font>
+                        <Font name="Bookman Old Style" size="20.0" />
+                     </font>
+                  </Text>
+                  <MaterialButton layoutX="289.0" layoutY="65.0" onAction="#setTeacherSelectClick" prefHeight="24.0" prefWidth="88.0" style="-fx-background-color: #f57c00;" text="SELECT" textFill="WHITE" />
+                  <MaterialButton fx:id="teacherLoadButton" layoutX="675.0" layoutY="19.0" onAction="#setTeacherLoadClick" prefHeight="27.0" prefWidth="88.0" style="-fx-background-color: #f57c00;" text="LOAD" textFill="WHITE" />
+                  <MaterialButton fx:id="teacherCancelButton" disable="true" layoutX="122.0" layoutY="449.0" onAction="#setTeacherCancelClick" prefHeight="20.0" prefWidth="88.0" style="-fx-background-color: red;" text="CANCEL" textFill="WHITE" />
+                  <MaterialButton fx:id="teacherAddGPAButton" disable="true" layoutX="266.0" layoutY="449.0" onAction="#setTeacherAddMarksClick" prefHeight="23.0" prefWidth="88.0" style="-fx-background-color: #f57c00;" text="ADD MARKS" textFill="WHITE" />
+                  <MaterialButton layoutX="21.0" layoutY="59.0" onAction="#setTeacherChangePasswordClick" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #f57c00;" text="CHANGE PASSWORD" textFill="WHITE" />
+                  <Text fill="#347fd0" layoutX="13.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME">
+                     <font>
+                        <Font name="Bookman Old Style" size="28.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tName" fill="#b62fc2" layoutX="178.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="tName">
+                     <font>
+                        <Font name="Bookman Old Style" size="28.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tMatricule" fill="#b62fc2" layoutX="272.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(tMatricule)">
+                     <font>
+                        <Font name="Bookman Old Style" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
