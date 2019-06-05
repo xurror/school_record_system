@@ -16,12 +16,13 @@
 	-- DROP DATABASE "SchoolRecordSystem";
 
 	CREATE TABLE public.admin (
+	
 	    admin_name character varying(64),
 	    admin_password character varying(64),
 	    CONSTRAINT admin_pkey PRIMARY KEY (admin_name),
 	    CONSTRAINT admin_name UNIQUE (admin_name)
 
-		DEFERRABLE INITIALLY DEFERRED
+	    DEFERRABLE INITIALLY DEFERRED
 	);
 
 	INSERT INTO public.admin(admin_name, admin_password)
@@ -31,6 +32,7 @@
 	    OWNER to postgres;
 
 	CREATE TABLE public.course (
+	
 	    course_id SERIAL,
 	    course_credit integer,
 	    course_code character varying(10),
@@ -45,6 +47,7 @@
 	    OWNER to postgres;
 
 	CREATE TABLE public.mycourses (
+	
 	    mycourses_id SERIAL,
 	    mycourses_matricule character varying(10),
 	    mycourses_code character varying(64),
@@ -61,6 +64,7 @@
 	    OWNER to postgres;   
 
 	CREATE TABLE public.school (
+	
 	    school_id SERIAL,
 	    school_faculty character varying(64) NOT NULL,
 	    school_department1 character varying(64) NOT NULL,
@@ -76,6 +80,7 @@
 	VALUES('Faculty of Engineering', 'CEN');
 
 	CREATE TABLE public.student (
+	
 	    student_id SERIAL,
 	    student_fname character varying(64) NOT NULL,
 	    student_lname character varying(64),
@@ -94,6 +99,7 @@
 	    OWNER to postgres;
 
 	CREATE TABLE public.studentgpa (
+	
 	    studentgpa_id SERIAL,
 	    studentgpa_matricule character varying(10) DEFAULT 'NULL'::character varying,
 	    studentgpa_1thsem double precision DEFAULT 0.00,
@@ -115,6 +121,7 @@
 	    OWNER to postgres;
 
 	CREATE TABLE public.tcourses (
+	
 	    tcourses_id SERIAL,
 	    tcourses_matricule character varying(10) NOT NULL,
 	    tcourses_code character varying(64) NOT NULL,
@@ -127,6 +134,7 @@
 	    OWNER to postgres;
 
 	CREATE TABLE public.teacher (
+	
 	    teacher_id SERIAL,
 	    teacher_fname character varying(64) NOT NULL,
 	    teacher_lname character varying(64),
